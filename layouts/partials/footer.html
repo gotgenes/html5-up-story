@@ -1,4 +1,4 @@
-      <footer class="wrapper style1 align-center">
+      <footer id="footer" class="wrapper style1 align-center">
         <div class="inner">
           <ul class="icons">
             {{- range .Site.Params.social }}
@@ -6,25 +6,27 @@
             {{- end }}
           </ul>
         </div>
-        <ul class="copyright">
-          <li>&copy;
-            {{ with .Site.Params.footer.copyright }}
-              {{ . }}
-            {{ else }}
-              {{ .Site.Params.author }}
-            {{ end }}</li>
-          <li>
-            {{ with .Site.Params.license }}
-              <a href="{{ .link }}">{{ .name }}</a>
-            {{ end }}</li>
-        </ul>
-        {{ with .Site.Params.credits }}
+        <div class="credits">
           <ul class="copyright">
-            {{ range . }}
-              <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
-            {{ end }}
+            <li>&copy;
+              {{ with .Site.Params.footer.copyright }}
+                {{ . }}
+              {{ else }}
+                {{ .Site.Params.author }}
+              {{ end }}</li>
+            <li>
+              {{ with .Site.Params.license }}
+                <a href="{{ .link }}">{{ .name }}</a>
+              {{ end }}</li>
           </ul>
-        {{ end }}
+          {{ with .Site.Params.credits }}
+            <ul class="copyright">
+              {{ range . }}
+                <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
+              {{ end }}
+            </ul>
+          {{ end }}
+          </div>
       </footer>
 
     </div>
