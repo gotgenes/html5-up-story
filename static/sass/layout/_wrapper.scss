@@ -29,7 +29,7 @@
 		@include wrapper-color(6);
 		@include wrapper-color(7);
 
-		&.divided {
+		.divided {
 			> * {
 				box-shadow: inset 0 1px 0 0 _palette(border-alt);
 

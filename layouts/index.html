@@ -2,11 +2,13 @@
 
       <section class="banner onload-image-fade-in onload-content-fade-right style3 content-align-left image-position-center orient-right">
         <div class="content">
-          <h1>{{ .Site.Author.name }}</h1>
-          <p class="major">{{ .Site.Params.tagline }}</p>
+          <header>
+            <h1>{{ .Site.Author.name }}</h1>
+            <p class="major">{{ .Site.Params.tagline }}</p>
+          </header>
         </div>
         <div class="image">
-          <img src="{{ .Site.Params.headshot }}" alt="">
+          <img src="{{ .Site.Params.headshot }}" alt="" />
         </div>
       </section>
 
