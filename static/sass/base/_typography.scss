@@ -42,6 +42,10 @@
 		@include vendor('transition', 'color #{_duration(transition)} ease-in-out');
 		text-decoration: underline;
 
+		&.nodecoration {
+			text-decoration: none;
+		}
+
 		&:hover {
 			text-decoration: none;
 		}
@@ -204,14 +208,6 @@
 			&:hover {
 				color: _palette($p, accent);
 			}
-		}
-
-		strong, b {
-			color: _palette($p, fg-bold);
-		}
-
-		h1, h2, h3, h4, h5, h6 {
-			color: _palette($p, fg-bold);
 		}
 
 		blockquote {
