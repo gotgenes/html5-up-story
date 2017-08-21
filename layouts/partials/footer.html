@@ -5,7 +5,7 @@
           <div class="social">
             <ul class="icons">
               {{ range .Site.Params.social }}
-              <li><a href="{{ .link }}" class="icon style2 {{ .icon }}"><span class="label">{{ .title }}</span></a></li>
+              <li><a href="{{ .link }}"><span class="icon style2 {{ .icon }} label" title="{{ .title }}"></span></a></li>
               {{ end }}
             </ul>
           </div>
