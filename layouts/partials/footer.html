@@ -10,7 +10,7 @@
           </div>
           {{ end }}
           <div class="credits">
-            <ul class="copyright">
+            <ul>
               <li>&copy;
                 {{ with .Site.Params.footer.copyright }}
                   {{ . }}
@@ -23,11 +23,11 @@
                 {{ end }}</li>
             </ul>
             {{ with .Site.Params.credits }}
-              <ul class="copyright">
-                {{ range . }}
-                  <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
-                {{ end }}
-              </ul>
+            <ul>
+            {{ range . }}
+              <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
+            {{ end }}
+            </ul>
             {{ end }}
             </div>
         </footer>
