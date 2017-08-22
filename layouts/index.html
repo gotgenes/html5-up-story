@@ -1,5 +1,4 @@
-{{- partial "header.html" . }}
-
+{{ partial "header.html" . }}
           <section class="banner onload-image-fade-in onload-content-fade-right style3 content-align-left image-position-center orient-right">
             <div class="content">
               <header>
@@ -11,6 +10,7 @@
               <img src="{{ .Site.Params.headshot }}" alt="" />
             </div>
           </section>
+
           {{ if or .Site.Params.social .Site.Params.additionalItems }}
           <section class="wrapper style1 align-center">
             <div class="inner">
@@ -37,5 +37,4 @@
             </div>
           </section>
           {{ end }}
-
-{{- partial "footer.html" . }}
+{{ partial "footer.html" . }}
