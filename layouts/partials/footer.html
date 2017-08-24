@@ -1,35 +1,37 @@
         </main>
         <footer id="footer" class="wrapper style1 align-center">
-          {{ if not .IsHome }}
-          <div class="social">
-            <ul class="icons">
-              {{ range .Site.Params.social }}
-              <li><a href="{{ .link }}"><span class="icon style2 {{ .icon }} label" title="{{ .title }}"></span></a></li>
-              {{ end }}
-            </ul>
-          </div>
-          {{ end }}
-          <div class="credits">
-            <ul>
-              <li>&copy;
-                {{ with .Site.Params.footer.copyright }}
-                  {{ . }}
-                {{ else }}
-                  {{ .Site.Params.author }}
-                {{ end }}</li>
-              <li>
-                {{ with .Site.Params.license }}
-                  <a href="{{ .link }}">{{ .name }}</a>
-                {{ end }}</li>
-            </ul>
-            {{ with .Site.Params.credits }}
-            <ul>
-            {{ range . }}
-              <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
-            {{ end }}
-            </ul>
-            {{ end }}
+          <div class="inner">
+            {{ if not .IsHome }}
+            <div class="social">
+              <ul class="icons">
+                {{ range .Site.Params.social }}
+                <li><a href="{{ .link }}"><span class="icon style2 {{ .icon }} label" title="{{ .title }}"></span></a></li>
+                {{ end }}
+              </ul>
             </div>
+            {{ end }}
+            <div class="credits">
+              <ul>
+                <li>&copy;
+                  {{ with .Site.Params.footer.copyright }}
+                    {{ . }}
+                  {{ else }}
+                    {{ .Site.Params.author }}
+                  {{ end }}</li>
+                <li>
+                  {{ with .Site.Params.license }}
+                    <a href="{{ .link }}">{{ .name }}</a>
+                  {{ end }}</li>
+              </ul>
+              {{ with .Site.Params.credits }}
+              <ul>
+              {{ range . }}
+                <li>{{ .text }} <a href="{{ .link }}">{{ .title }}</a></li>
+              {{ end }}
+              </ul>
+              {{ end }}
+            </div>
+          </div>
         </footer>
       </div>
     </div>
