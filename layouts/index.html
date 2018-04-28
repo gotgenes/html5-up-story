@@ -1,40 +1,18 @@
-{{ partial "header.html" . }}
-          <section class="banner onload-image-fade-in onload-content-fade-right style3 content-align-left image-position-center orient-right">
+{{ define "main" }}
+          <section class="banner style3 orient-right content-align-left image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
             <div class="content">
               <header>
                 <h1>{{ .Site.Author.name }}</h1>
-                <p class="major">{{ .Site.Params.tagline }}</p>
+                <p>{{ .Site.Params.tagline }}</p>
               </header>
+              {{- with .Site.Params.summary }}
+              {{ . | markdownify }}
+              {{- end }}
             </div>
             <div class="image">
-              <img src="{{ .Site.Params.headshot }}" alt="" />
+              <img src="{{ .Site.Params.headshot }}" alt="{{ .Site.Author.name }}" />
             </div>
           </section>
 
-          {{ if or .Site.Params.social .Site.Params.additionalItems }}
-          <section class="wrapper style1 align-center">
-            <div class="inner">
-              <h2>Web Presence</h2>
-              <p>Find me at these other fine places on the web.</p>
-              <div class="items style1 medium onscroll-fade-in">
-              {{ range .Site.Params.social }}
-                <section>
-                  <a class="nodecoration" href="{{ .link }}">
-                    <span class="icon style2 major {{ .icon }}"></span>
-                    <h3>{{ .title }}</h3>
-                  </a>
-                </section>
-              {{ end }}
-              {{ range .Site.Params.additionalItems }}
-                <section>
-                  <a class="nodecoration" href="{{ .link }}">
-                    <span class="icon style2 major colorized {{ .icon }}"></span>
-                    <h3>{{ .title }}</h3>
-                  </a>
-                </section>
-              {{ end }}
-              </div>
-            </div>
-          </section>
-          {{ end }}
-{{ partial "footer.html" . }}
+          {{ .Content }}
+{{ end }}

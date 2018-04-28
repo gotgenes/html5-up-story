@@ -4,15 +4,16 @@
   <head>
     <meta charset="utf-8" />
     <meta name="author" content="{{ .Site.Author.name }}" />
+    {{ .Hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{{ .Title }}</title>
+    <title>{{- block "title" . -}}
+      {{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}
+    {{- end -}}</title>
 
-    {{- if .Description }}
-    <meta name="description" content="{{ .Description }}">
+    {{- with .Description }}
+    <meta name="description" content="{{ . }}">
     {{- end }}
-
-    {{- .Hugo.Generator }}
 
     <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
     <link rel="stylesheet" href="/css/prism.css" />
