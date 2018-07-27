@@ -1,4 +1,8 @@
-{{ partial "header.html" . }}
+{{ partial "head.html" . }}
+{{ block "header" . }}
+{{ end }}
+        <main class="divided stickyfooter-content">
 {{ block "main" . }}
 {{ end }}
+        </main>
 {{ partial "footer.html" . }}

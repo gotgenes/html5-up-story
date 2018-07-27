@@ -1,0 +1,21 @@
+{{ define "main" }}
+          <section class="banner style5 content-align-center image-position-center onload-content-fade-in invert">
+            <div class="content">
+              <header>
+                <h1 id="title">{{ .Title }}</h1>
+              </header>
+            </div>
+            <div class="image">
+              <img src="{{ .Site.Params.defaultHeroImage }}" />
+            </div>
+          </section>
+          <section class="wrapper style1 align-center">
+            <div class="inner">
+            {{ range .Data.Pages }}
+            <header>
+              <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+            </header>
+            {{ end }}
+            </div>
+          </section>
+{{ end }}
