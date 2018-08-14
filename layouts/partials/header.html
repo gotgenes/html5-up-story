@@ -1,0 +1,22 @@
+<header id="siteheader">
+  <a href="#main-menu" role="button" id="main-menu-toggle" class="menu-toggle">
+    <span class="fa fa-bars"></span>
+  </a>
+
+  <h1 class="logo">{{ .Site.Title }}</h1>
+
+  <nav id="main-menu" class="main-menu">
+    <a href="#main-menu-toggle" role="button" id="main-menu-close" class="menu-close">
+      <span class="fa fa-close"></span>
+    </a>
+    {{ $currentPage := . }}
+    {{ with .Site.Menus.main }}
+    <ul>
+    {{ range . }}
+    <li><a class="nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+    {{ end }}
+    </ul>
+    {{ end }}
+  </nav>
+  <a href="#main-menu-toggle" class="backdrop" tabindex="-1" hidden></a>
+</header>

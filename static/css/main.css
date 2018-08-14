@@ -3088,6 +3088,104 @@ body.is-loading .banner.onload-image-fade-in .image img {
 .banner.style4.invert.android .image:after {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='64px' height='32px' viewBox='0 0 64 32' zoomAndPan='disable'%3E%3Cstyle%3Erect %7Bfill: transparent%3B stroke: white%3B stroke-width: 1px%3B %7D%3C/style%3E%3Crect rx='4' ry='4' x='6' y='4' width='52' height='24' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E"); }
 
+#siteheader {
+  padding: 20px;
+  display: flex;
+  align-items: baseline; }
+  #siteheader .logo {
+    margin: 0 30px 0 10px;
+    font-size: 1.5em; }
+  #siteheader .menu-toggle {
+    display: none; }
+  #siteheader .main-menu {
+    position: relative;
+    left: auto;
+    top: auto;
+    height: auto; }
+    #siteheader .main-menu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      height: auto;
+      width: auto;
+      background: none; }
+    #siteheader .main-menu a:hover, #siteheader .main-menu a:focus {
+      background: none; }
+    #siteheader .main-menu .menu-close {
+      display: none; }
+  @media screen and (max-width: 736px) {
+    #siteheader .menu-toggle {
+      display: inline-block;
+      padding: .75em 15px;
+      line-height: 1em;
+      font-size: 1em;
+      color: #333; }
+      #siteheader .menu-toggle:hover, #siteheader .menu-toggle:focus {
+        color: #c00; }
+    #siteheader .main-menu {
+      position: absolute;
+      left: -200px;
+      top: 0;
+      height: 100%;
+      overflow-y: scroll;
+      overflow-x: visible;
+      transition: left 0.3s ease, box-shadow 0.3s ease;
+      z-index: 999; }
+      #siteheader .main-menu ul {
+        display: block;
+        padding: 2.5em 0 0;
+        /* Hide shadow w/ -8px while 'closed' */
+        box-shadow: -8px 0 8px rgba(0, 0, 0, 0.5);
+        min-height: 100%;
+        width: 200px;
+        background: #1a1a1a; }
+      #siteheader .main-menu a {
+        display: block;
+        padding: .75em 15px;
+        line-height: 1em;
+        font-size: 1em;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #383838; }
+        #siteheader .main-menu a:hover, #siteheader .main-menu a:focus {
+          background: #333;
+          text-decoration: underline; }
+      #siteheader .main-menu li:first-child a {
+        border-top: 1px solid #383838; }
+      #siteheader .main-menu .menu-close {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0; }
+      #siteheader .main-menu:target, #siteheader .main-menu[aria-expanded="true"] {
+        left: 0;
+        outline: none;
+        box-shadow: 3px 0 12px rgba(0, 0, 0, 0.25); }
+      #siteheader .main-menu:target .menu-close, #siteheader .main-menu[aria-expanded="true"] .menu-close {
+        z-index: 1001; }
+      #siteheader .main-menu:target ul, #siteheader .main-menu[aria-expanded="true"] ul {
+        position: relative;
+        z-index: 1000; }
+      #siteheader .main-menu:target + .backdrop, #siteheader .main-menu[aria-expanded="true"] + .backdrop {
+        position: absolute;
+        display: block;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 998;
+        background: #000;
+        background: rgba(0, 0, 0, 0.85);
+        cursor: default; }
+    @supports (position: fixed) {
+      #siteheader .main-menu,
+      #siteheader .main-menu:target + .backdrop,
+      #siteheader .main-menu[aria-expanded="true"] + .backdrop {
+        position: fixed; } } }
+
 #footer {
   -moz-flex-shrink: 0;
   -webkit-flex-shrink: 0;

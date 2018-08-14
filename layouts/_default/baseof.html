@@ -1,8 +1,10 @@
 {{ partial "head.html" . }}
+{{ partial "header.html" . }}
 {{ block "header" . }}
 {{ end }}
-        <main class="divided stickyfooter-content">
+        <div class="divided">
+          <main class="divided stickyfooter-content">
 {{ block "main" . }}
 {{ end }}
-        </main>
+          </main>
 {{ partial "footer.html" . }}
