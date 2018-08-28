@@ -1,11 +1,12 @@
 #siteheader {
-	padding: 20px;
+	@include padding(_size(padding, default), _size(padding, header));
 	display: flex;
+	justify-content: space-between;
 	align-items: baseline;
 
 	.logo {
-		margin: 0 30px 0 10px;
 		font-size: 1.5em;
+		line-height: 1;
 	}
 
 	.menu-toggle {
@@ -13,10 +14,6 @@
 	}
 
 	.main-menu {
-		position: relative;
-		left: auto;
-		top: auto;
-		height: auto;
 
 		ul {
 			display: flex;
@@ -24,17 +21,21 @@
 			margin: 0;
 
 			padding: 0;
-			box-shadow: none;
 			height: auto;
 			width: auto;
 			background: none;
+
+			li {
+				padding-left: 1em;
+
+				&:first-child {
+					padding-left: 0em;
+				}
+			}
 		}
 
 		a {
-			&:hover,
-			&:focus {
-				background: none;
-			}
+			text-decoration: none;
 		}
 
 		.menu-close {
@@ -42,18 +43,28 @@
 		}
 	}
 
+	@include breakpoint(xlarge) {
+		@include padding(_size(padding, header), _size(padding, xlarge));
+	}
+
+	@include breakpoint(large) {
+		@include padding(_size(padding, header), _size(padding, large));
+	}
+
+	@include breakpoint(medium) {
+		@include padding(_size(padding, header), _size(padding, medium));
+	}
+
 	@include breakpoint(small) {
+		@include padding(_size(padding, header), _size(padding, small));
+		justify-content: flex-start;
+
 		.menu-toggle {
 			display: inline-block;
-			padding: .75em 15px;
+			margin-right: 1em;
 			line-height: 1em;
 			font-size: 1em;
-			color: #333;
-
-			&:hover,
-			&:focus {
-				color: #c00;
-			}
+			color: _palette(fg);
 		}
 
 		.main-menu {
@@ -69,11 +80,13 @@
 			ul {
 				display: block;
 				padding: 2.5em 0 0;
-				/* Hide shadow w/ -8px while 'closed' */
-				box-shadow: -8px 0 8px rgba(0,0,0,.5);
 				min-height: 100%;
 				width: 200px;
 				background: #1a1a1a;
+
+				li {
+					padding-left: 0;
+				}
 			}
 
 			a {
@@ -81,9 +94,9 @@
 				padding: .75em 15px;
 				line-height: 1em;
 				font-size: 1em;
-				color: #fff;
+				color: _palette(invert, fg);
 				text-decoration: none;
-				border-bottom: 1px solid #383838;
+				border-bottom: 1px solid _palette(invert, border-alt);
 
 				&:hover,
 				&:focus {
@@ -94,7 +107,7 @@
 
 			li:first-child {
 				a {
-					border-top: 1px solid #383838;
+					border-top: 1px solid _palette(invert, border-alt);
 				}
 			}
 
@@ -103,13 +116,14 @@
 				position: absolute;
 				right: 0;
 				top: 0;
+				border-bottom-style: none;
 			}
 
 			&:target,
 			&[aria-expanded="true"] {
 				left: 0;
 				outline: none;
-				box-shadow: 3px 0 12px rgba(0,0,0,.25);
+				box-shadow: 3px 0 12px _palette(invert, nav-shadow);
 			}
 
 			&:target .menu-close,
@@ -133,8 +147,7 @@
 				width: 100%;
 				height: 100%;
 				z-index: 998;
-				background: #000;
-				background: rgba(0,0,0,.85);
+				background: _palette(invert, nav-backdrop);
 				cursor: default;
 			}
 		}

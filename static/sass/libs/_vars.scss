@@ -32,7 +32,8 @@
 			xlarge:			5rem,
 			large:			4rem,
 			medium:			3rem,
-			small:			2rem
+			small:			2rem,
+			header:			1rem,
 		)
 	);
 
@@ -75,6 +76,9 @@
 			border:			rgba(255,255,255,1.0),
 			border-alt:		rgba(255,255,255,0.125),
 			border-bg:		rgba(255,255,255,0.125),
-			accent:			#47D3E5
+			accent:			#47D3E5,
+			nav:			#1a1a1a,
+			nav-shadow:		rgba(0,0,0,.25),
+			nav-backdrop:	rgba(200,200,200,.85)
 		),
 	);
