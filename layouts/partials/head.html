@@ -1,25 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="author" content="{{ .Site.Author.name }}" />
+  {{ .Hugo.Generator }}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="{{ .Site.Author.name }}" />
-    {{ .Hugo.Generator }}
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{- block "title" . -}}
+    {{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}
+  {{- end -}}</title>
 
-    <title>{{- block "title" . -}}
-      {{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}
-    {{- end -}}</title>
+  {{- with .Description }}
+  <meta name="description" content="{{ . }}">
+  {{- end }}
 
-    {{- with .Description }}
-    <meta name="description" content="{{ . }}">
-    {{- end }}
-
-    <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
-    <link rel="stylesheet" href="/css/prism.css" />
-    <link rel="stylesheet" href="/css/main.css" />
-  </head>
-
-  <body lang="en">
-    <div class="stickyfooter">
-      <div id="wrapper">
+  <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  <link rel="stylesheet" href="/css/prism.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+</head>

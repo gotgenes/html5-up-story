@@ -1,18 +1,25 @@
-{{ define "main" }}
-          <section class="banner style3 orient-right content-align-left image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
-            <div class="content">
-              <header>
-                <h1>{{ .Site.Author.name }}</h1>
-                <p>{{ .Site.Params.tagline }}</p>
-              </header>
-              {{- with .Site.Params.summary }}
-              {{ . | markdownify }}
-              {{- end }}
-            </div>
-            <div class="image">
-              <img src="{{ .Site.Params.headshot }}" alt="{{ .Site.Author.name }}" />
-            </div>
-          </section>
+{{ define "header" }}
 
-          {{ .Content }}
+<div class="nav-banner">
+  {{ partial "header.html" . }}
+
+  <section class="banner style3 orient-right content-align-left image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
+    <div class="content">
+      <header>
+        <h1>{{ .Site.Author.name }}</h1>
+        <p>{{ .Site.Params.tagline }}</p>
+      </header>
+      {{- with .Site.Params.summary }}
+      {{ . | markdownify }}
+      {{- end }}
+    </div>
+    <div class="image">
+      <img src="{{ .Site.Params.headshot }}" alt="{{ .Site.Author.name }}" />
+    </div>
+  </section>
+</div>
+{{ end }}
+
+{{ define "main-content" }}
+{{ .Content }}
 {{ end }}

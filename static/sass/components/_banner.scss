@@ -988,3 +988,17 @@
 	}
 
 	@include color-banner;
+
+	.nav-banner {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+
+		.banner {
+			flex: auto;
+
+			&.style1.fullscreen, &.style2.fullscreen, &.style3.fullscreen, &.style4.fullscreen, &.style5.fullscreen {
+				min-height: auto;
+			}
+		}
+	}
