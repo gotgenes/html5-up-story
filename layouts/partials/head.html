@@ -14,5 +14,7 @@
 
   <link rel="alternate" href="{{ "/index.xml" | absURL }}" type="application/rss+xml" title="{{ .Site.Title }}">
   <link rel="stylesheet" href="/css/prism.css" />
-  <link rel="stylesheet" href="/css/main.css" />
+  {{ $sassOptions := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
+  {{ $style := resources.Get "sass/main.scss" | toCSS $sassOptions }}
+  <link rel="stylesheet" href="{{ $style.Permalink }}" />
 </head>
