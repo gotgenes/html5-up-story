@@ -1,0 +1,17 @@
+{{ define "main-content" }}
+<section class="banner style5 content-align-center image-position-center">
+  <div class="content">
+    <header>
+      <h1 id="title">{{ .Title }}</h1>
+    </header>
+  </div>
+  <div class="image">
+    <img src="{{ .Site.Params.defaultHeroImage }}" />
+  </div>
+</section>
+<section class="wrapper style1 align-center">
+  <div class="inner align-left">
+    {{ .Content }}
+  </div>
+</section>
+{{ end }}

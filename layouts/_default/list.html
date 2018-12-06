@@ -1,5 +1,5 @@
 {{ define "main-content" }}
-<section class="banner style5 content-align-center image-position-center onload-content-fade-in">
+<section class="banner style5 content-align-center image-position-center">
   <div class="content">
     <header>
       <h1 id="title">{{ .Title }}</h1>
@@ -10,15 +10,20 @@
   </div>
 </section>
 <section class="wrapper style1 align-center">
-  {{ .Content }}
-<section class="wrapper style1 align-center">
-  <div class="inner">
-  {{ range .Data.Pages }}
-  <header>
-    <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
-  </header>
-  <p>{{ .Summary }}</p>
+  {{ with .Content }}
+  <div class="index align-left">
+    {{ . }}
+  </div>
   {{ end }}
+</section>
+<section class="wrapper style1 align-center">
+  <div class="inner align-left">
+    {{ range .Data.Pages }}
+    <header>
+      <h2><a href={{ .Permalink }}>{{ .Title }}</a></h2>
+    </header>
+    <p>{{ .Summary }}</p>
+    {{ end }}
   </div>
 </section>
 {{ end }}
