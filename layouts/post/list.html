@@ -14,6 +14,7 @@
     <header>
       <h2>{{ .Title }}</h2>
     </header>
+    <p class="italic">{{ .PublishDate.Format "2006-01-02" }}{{ if (ne .PublishDate .Lastmod) }}{{ end }}</p>
     <p>{{ .Summary }}</p>
     </a>
     {{ end }}
