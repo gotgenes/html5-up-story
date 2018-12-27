@@ -1,14 +1,5 @@
 {{ define "main-content" }}
-<section class="banner style5 content-align-center image-position-center">
-  <div class="content">
-    <header>
-      <h1 id="title">{{ .Title }}</h1>
-    </header>
-  </div>
-  <div class="image">
-    <img src="{{ .Params.image | default .Site.Params.defaultTitleImage }}" />
-  </div>
-</section>
+{{ partial "title.html" . }}
 <section class="wrapper style1 align-center">
   <div class="inner align-left">
     <p class="italic">Originally published {{ .PublishDate.Format "2006-01-02" }}{{ if (ne .PublishDate .Lastmod) }}, last modified {{ .Lastmod.Format "2006-01-02" }}{{ end }}</p>
