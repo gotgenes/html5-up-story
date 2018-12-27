@@ -6,7 +6,7 @@
     </header>
   </div>
   <div class="image">
-    <img src="{{ .Site.Params.defaultHeroImage }}" />
+    <img src="{{ .Params.image | default .Site.Params.defaultTitleImage }}" />
   </div>
 </section>
 <section class="wrapper style1 align-center">
