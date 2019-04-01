@@ -17,4 +17,5 @@
   {{ $sassOptions := (dict "outputStyle" "compressed" "enableSourceMap" true) }}
   {{ $style := resources.Get "sass/main.scss" | toCSS $sassOptions }}
   <link rel="stylesheet" href="{{ $style.Permalink }}" />
+  {{ partial "favicon.html" . }}
 </head>
