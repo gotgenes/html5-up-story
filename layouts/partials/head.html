@@ -1,5 +1,10 @@
 <head>
   <meta charset="utf-8" />
+
+  {{ if .Site.Params.googleAnalyticsID }}
+  {{ partial "google_analytics.html" . }}
+  {{ end }}
+
   <meta name="author" content="{{ .Site.Author.name }}" />
   {{ .Hugo.Generator }}
   <meta name="viewport" content="width=device-width, initial-scale=1" />

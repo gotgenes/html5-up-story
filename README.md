@@ -8,6 +8,7 @@ A responsive theme [originally designed](https://html5up.net/story) by [HTML5 UP
 * Responsive design
 * Responsive navigation menu
 * Font Awesome social icons in footer
+* Support for Google Analytics via `.Site.Params.googleAnalyticsID`
 
 
 ## Changes from original Story
